@@ -1,0 +1,40 @@
+" **************************************************************************** "
+"                                                                              "
+"                                                         :::      ::::::::    "
+"    .myvimrc                                           :+:      :+:    :+:    "
+"                                                     +:+ +:+         +:+      "
+"    By: zaz <zaz@staff.42.fr>                      +#+  +:+       +#+         "
+"                                                 +#+#+#+#+#+   +#+            "
+"    Created: 2013/06/15 12:36:36 by zaz               #+#    #+#              "
+"    Updated: 2015/06/24 09:19:42 by bmbarga          ###   ########.fr        "
+"                                                                              "
+" **************************************************************************** "
+
+"Put your custom Vim configuration here
+
+"Better command completion
+"set wildmenu
+"set wildmode=list:longest
+
+"Show current line
+"set cursorline
+set tabstop=4
+set number
+syntax on
+set shiftwidth=4
+set smartindent
+set autoindent
+
+"comment vim file
+
+autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
+autocmd FileType c,cpp				 let b:comment_debug = '/*_DEBUG_*/'
+autocmd FileType sh,ruby,python   let b:comment_leader = '# '
+autocmd FileType conf,fstab       let b:comment_leader = '# '
+autocmd FileType tex              let b:comment_leader = '% '
+autocmd FileType mail             let b:comment_leader = '> '
+autocmd FileType vim              let b:comment_leader = '" '
+noremap <silent> ee :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+noremap <silent> er :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+
+noremap <silent> tt :<C-B>silent <C-E>s/$/<C-R>=escape(b:comment_debug,'\/')<CR>/<CR>:nohlsearch<CR>
