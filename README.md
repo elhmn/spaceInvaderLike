@@ -1,2 +1,2 @@
 # spaceInvaderLike
- c++ space Invader
+ c++/ncurses space Invader
