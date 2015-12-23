@@ -21,7 +21,7 @@ Missile::Missile(char img) : AStuff(img)
 	if (DEBUG) this->debug("Missile constructed (default).");
 }
 
-Missile::Missile(Missile const &copy)
+Missile::Missile(Missile const &copy): AStuff(copy)
 {
 	if (DEBUG) this->debug("Missile constructed (copy).");
 

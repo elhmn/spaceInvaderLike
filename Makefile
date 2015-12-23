@@ -17,10 +17,10 @@ O_DIR =	obj
 VPATH =	src
 SRCC = 	$(C_SRC:%.cpp=$(VPATH)/%.cpp)
 SRCO =	$(C_SRC:%.cpp=$(O_DIR)/%.o)
-CC =	clang++
+CC =	g++
 RM =	rm -rf
 MKDIR = mkdir -p
-CFLAGS = -Wall -Werror -Wextra -Wpedantic -Wold-style-cast -Woverloaded-virtual -Wfloat-equal -Wwrite-strings -Wcast-qual -Wcast-align -Wconversion -Wshadow -Weffc++ -Wredundant-decls -Winit-self -Wswitch-default -Wswitch-enum -Wundef -Winline -O2
+CFLAGS = -Wall -Werror -Wextra #-Wpedantic -Wold-style-cast -Woverloaded-virtual -Wfloat-equal -Wwrite-strings -Wcast-qual -Wcast-align -Wconversion -Wshadow -Weffc++ -Wredundant-decls -Winit-self -Wswitch-default -Wswitch-enum -Wundef -Winline -O2
 CURSES = -lncurses
 
 COLOR_WHITE = \033[37;01m

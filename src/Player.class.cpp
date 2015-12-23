@@ -26,7 +26,7 @@ Player::Player(char img, std::string name) : AUnit(img),
 	if (DEBUG) this->debug("Player constructed (default).");
 }
 
-Player::Player(Player const &copy)
+Player::Player(Player const &copy): AUnit(copy)
 {
 	*this = copy;
 

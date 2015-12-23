@@ -23,7 +23,7 @@ Enemy::Enemy(char img) : AUnit(img)
     this->setAlive(false);                         
 }
 
-Enemy::Enemy(Enemy const &copy)
+Enemy::Enemy(Enemy const &copy): AUnit(copy)
 {
 	if (DEBUG) this->debug("Enemy constructed (copy).");
 

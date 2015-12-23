@@ -23,7 +23,7 @@ Obstacle::Obstacle(char img) : AStuff(img)
 	this->setAlive(false);
 }
 
-Obstacle::Obstacle(Obstacle const &copy)
+Obstacle::Obstacle(Obstacle const &copy) : AStuff(copy)
 {
 	if (DEBUG) this->debug("Obstacle constructed (copy).");
 

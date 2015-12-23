@@ -25,11 +25,12 @@ AUnit::AUnit(char img) : AStuff(img),
 		this->_miss[i] = new Missile;
 }
 
-AUnit::AUnit(AUnit const &copy)
+AUnit::AUnit(AUnit const &copy):AStuff(copy)
 {
 	if (DEBUG) this->debug("Unit constructed (copy).");
 
-	this->_miss = new Missile*[NB_MISSILE];
+	this->_miss = new Missile*[NB_MISSILE]();
+	(void)copy;
 	*this = copy;
 }
 
